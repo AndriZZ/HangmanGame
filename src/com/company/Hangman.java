@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hangman {
-    private int lifes=3;
+    private int lives=10;
     private int score=0;
 
     public void playHangman(String word) {
@@ -18,15 +18,15 @@ public class Hangman {
             }
             counter++;
         }
-         if (lifes>0) {
+         if (lives>0) {
          for (int j = 0; j < fillerArray.length; j++) {
         System.out.print(fillerArray[j] + " ");
          }
-        System.out.println("    Lives remaining=" + lifes);
+        System.out.println("    Lives remaining=" + lives);
                      }
         ArrayList<Character> wordToGuess=new ArrayList<Character>();
         Scanner scanner = new Scanner(System.in); //reading characters
-        while (lifes > 0) {
+        while (lives > 0) {
             char inputCharacter = scanner.next().charAt(0);
             if (wordToGuess.contains(inputCharacter)) {
                 System.out.println("Already entered");
@@ -40,7 +40,7 @@ public class Hangman {
                     }
                 }
             } else {
-                lifes--;
+                lives--;
             }
             if (word.equals(String.valueOf(fillerArray))) {
                 for (int j = 0; j < fillerArray.length; j++) {
@@ -57,11 +57,11 @@ public class Hangman {
             for (int j = 0; j < fillerArray.length; j++) {
                 System.out.print(fillerArray[j] + " ");
             }
-            System.out.println("    Lives remaining=" + lifes);
+            System.out.println("    Lives remaining=" + lives);
 
         }
 
-        if(lifes==0){
+        if(lives==0){
             System.out.println("Game over");
         }
     }
