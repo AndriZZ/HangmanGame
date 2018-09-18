@@ -16,7 +16,8 @@ public class FileContentReader {
     public String requireDictionary() throws IOException {
         BufferedReader buffer=new BufferedReader(new InputStreamReader(System.in));
         UserInteractionHandler userInteractionHandler=new UserInteractionHandler(buffer);
-        userInteractionHandler.outputMessage("Enter dictionary file name: ");
+        userInteractionHandler.outputMessage("Hint: use dictionary.txt \n" +
+                "Enter dictionary file name:");
         filename = userInteractionHandler.readFilenameInput();
         return filename;
 

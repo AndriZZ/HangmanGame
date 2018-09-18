@@ -42,7 +42,7 @@ public class Hangman {
             } else {
                 lifes--;
             }
-            if (word.equals(String.valueOf(fillerArray))) { 
+            if (word.equals(String.valueOf(fillerArray))) {
                 for (int j = 0; j < fillerArray.length; j++) {
                     System.out.print(fillerArray[j] + " ");
                 }
